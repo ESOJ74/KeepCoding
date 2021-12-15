@@ -1,0 +1,277 @@
+{
+  "paragraphs": [
+    {
+      "text": "sc.version",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-16 19:35:45.930",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mres28\u001b[0m: \u001b[1m\u001b[32mString\u001b[0m \u003d 2.4.5\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625377357137_1809097944",
+      "id": "paragraph_1625377357137_1809097944",
+      "dateCreated": "2021-07-04 07:42:37.138",
+      "dateStarted": "2021-09-16 19:35:45.935",
+      "dateFinished": "2021-09-16 19:35:46.014",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val frases \u003d List(\"A partir del anio 2000 se consolido y\", \n                    \"fue en aumento el uso de una tecnologia basada\", \n                    \"en la conexion a internet sin cables:\", \n                    \"las denominadas redes wifi.\", \n                    \"Wifi hace alusion al estandar adoptado a nivel internacional,\", \n                    \"que se incorpora a todos los ordenadores, tablets,\",\n                    \"telefonos de ultima generacion, etc.\")",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-16 20:04:10.269",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mfrases\u001b[0m: \u001b[1m\u001b[32mList[String]\u001b[0m \u003d List(A partir del anio 2000 se consolido y, fue en aumento el uso de una tecnologia basada, en la conexion a internet sin cables:, las denominadas redes wifi., Wifi hace alusion al estandar adoptado a nivel internacional,, que se incorpora a todos los ordenadores, tablets,, telefonos de ultima generacion, etc.)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625377433316_875196926",
+      "id": "paragraph_1625377433316_875196926",
+      "dateCreated": "2021-07-04 07:43:53.316",
+      "dateStarted": "2021-09-16 20:04:10.274",
+      "dateFinished": "2021-09-16 20:04:10.406",
+      "status": "FINISHED"
+    },
+    {
+      "text": "// spark context llamado sc\n\nval texto \u003d sc.parallelize(frases) \n\nval numeroPalabras \u003d texto.flatMap(line \u003d\u003e line.toLowerCase.split(\"\\\\W+\"))\n\n//RDD (Resilient Distributed Dataset)\nnumeroPalabras.collect().foreach(println(_))",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-16 20:04:13.168",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "a\npartir\ndel\nanio\n2000\nse\nconsolido\ny\nfue\nen\naumento\nel\nuso\nde\nuna\ntecnologia\nbasada\nen\nla\nconexion\na\ninternet\nsin\ncables\nlas\ndenominadas\nredes\nwifi\nwifi\nhace\nalusion\nal\nestandar\nadoptado\na\nnivel\ninternacional\nque\nse\nincorpora\na\ntodos\nlos\nordenadores\ntablets\ntelefonos\nde\nultima\ngeneracion\netc\n\u001b[1m\u001b[34mtexto\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[String]\u001b[0m \u003d ParallelCollectionRDD[77] at parallelize at \u003cconsole\u003e:33\n\u001b[1m\u001b[34mnumeroPalabras\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[String]\u001b[0m \u003d MapPartitionsRDD[78] at flatMap at \u003cconsole\u003e:35\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d16"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625378767530_1955802548",
+      "id": "paragraph_1625378767530_1955802548",
+      "dateCreated": "2021-07-04 08:06:07.530",
+      "dateStarted": "2021-09-16 20:04:13.172",
+      "dateFinished": "2021-09-16 20:04:13.426",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val texto \u003d sc.parallelize(frases) \nval numeroPalabras1 \u003d texto.flatMap(line \u003d\u003e line.toLowerCase.split(\"\\\\W+\")).map(palabra \u003d\u003e (palabra,1))\nnumeroPalabras.collect().foreach(println(_))",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-16 20:04:31.681",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "a\npartir\ndel\nanio\n2000\nse\nconsolido\ny\nfue\nen\naumento\nel\nuso\nde\nuna\ntecnologia\nbasada\nen\nla\nconexion\na\ninternet\nsin\ncables\nlas\ndenominadas\nredes\nwifi\nwifi\nhace\nalusion\nal\nestandar\nadoptado\na\nnivel\ninternacional\nque\nse\nincorpora\na\ntodos\nlos\nordenadores\ntablets\ntelefonos\nde\nultima\ngeneracion\netc\n\u001b[1m\u001b[34mtexto\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[String]\u001b[0m \u003d ParallelCollectionRDD[79] at parallelize at \u003cconsole\u003e:30\n\u001b[1m\u001b[34mnumeroPalabras1\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[(String, Int)]\u001b[0m \u003d MapPartitionsRDD[81] at map at \u003cconsole\u003e:31\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d17"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1631814831208_1701657622",
+      "id": "paragraph_1631814831208_1701657622",
+      "dateCreated": "2021-09-16 19:53:51.208",
+      "dateStarted": "2021-09-16 20:04:31.688",
+      "dateFinished": "2021-09-16 20:04:31.928",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val texto \u003d sc.parallelize(frases) \nval numeroPalabras2 \u003d texto.flatMap(line \u003d\u003e line.toLowerCase.split(\"\\\\W+\")).map(palabra \u003d\u003e (palabra,1)).reduceByKey( _ + _ )\nnumeroPalabras.collect().foreach(println(_))",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-16 20:04:39.397",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "a\npartir\ndel\nanio\n2000\nse\nconsolido\ny\nfue\nen\naumento\nel\nuso\nde\nuna\ntecnologia\nbasada\nen\nla\nconexion\na\ninternet\nsin\ncables\nlas\ndenominadas\nredes\nwifi\nwifi\nhace\nalusion\nal\nestandar\nadoptado\na\nnivel\ninternacional\nque\nse\nincorpora\na\ntodos\nlos\nordenadores\ntablets\ntelefonos\nde\nultima\ngeneracion\netc\n\u001b[1m\u001b[34mtexto\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[String]\u001b[0m \u003d ParallelCollectionRDD[82] at parallelize at \u003cconsole\u003e:31\n\u001b[1m\u001b[34mnumeroPalabras2\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[(String, Int)]\u001b[0m \u003d ShuffledRDD[85] at reduceByKey at \u003cconsole\u003e:32\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d18"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1631815199984_23937825",
+      "id": "paragraph_1631815199984_23937825",
+      "dateCreated": "2021-09-16 19:59:59.984",
+      "dateStarted": "2021-09-16 20:04:39.403",
+      "dateFinished": "2021-09-16 20:04:39.676",
+      "status": "FINISHED"
+    },
+    {
+      "text": "",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-04 08:28:09.674",
+      "progress": 0,
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625378986073_1460934915",
+      "id": "paragraph_1625378986073_1460934915",
+      "dateCreated": "2021-07-04 08:09:46.073",
+      "status": "READY"
+    }
+  ],
+  "name": "3.Contar Palabras v1",
+  "id": "2GBKCD5F1",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

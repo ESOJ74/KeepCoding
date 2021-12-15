@@ -1,0 +1,273 @@
+{
+  "paragraphs": [
+    {
+      "text": "import org.apache.spark.SparkConf\nimport org.apache.spark.rdd.RDD\nimport org.apache.spark.sql.SparkSession\nimport org.apache.spark.storage.StorageLevel\nimport org.apache.spark.streaming.{Seconds, StreamingContext, Time}",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 07:19:30.977",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.SparkConf\nimport org.apache.spark.rdd.RDD\nimport org.apache.spark.sql.SparkSession\nimport org.apache.spark.storage.StorageLevel\nimport org.apache.spark.streaming.{Seconds, StreamingContext, Time}\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1631854589430_833418671",
+      "id": "paragraph_1631854589430_833418671",
+      "dateCreated": "2021-09-17 06:56:29.430",
+      "dateStarted": "2021-09-17 07:19:30.981",
+      "dateFinished": "2021-09-17 07:19:31.139",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val ssc \u003d new StreamingContext(sc,Seconds(2))",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 07:19:31.182",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mssc\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.streaming.StreamingContext\u001b[0m \u003d org.apache.spark.streaming.StreamingContext@77415483\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1631854601884_1793210074",
+      "id": "paragraph_1631854601884_1793210074",
+      "dateCreated": "2021-09-17 06:56:41.885",
+      "dateStarted": "2021-09-17 07:19:31.186",
+      "dateFinished": "2021-09-17 07:19:31.325",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val lineas \u003d ssc.socketTextStream(\"localhost\",9000,StorageLevel.MEMORY_AND_DISK_SER)\nval palabras \u003d lineas.flatMap(_.split(\" \"))",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 07:19:31.386",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mlineas\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.streaming.dstream.ReceiverInputDStream[String]\u001b[0m \u003d org.apache.spark.streaming.dstream.SocketInputDStream@241ea267\n\u001b[1m\u001b[34mpalabras\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.streaming.dstream.DStream[String]\u001b[0m \u003d org.apache.spark.streaming.dstream.FlatMappedDStream@66499c43\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1631854628722_1835362330",
+      "id": "paragraph_1631854628722_1835362330",
+      "dateCreated": "2021-09-17 06:57:08.723",
+      "dateStarted": "2021-09-17 07:19:31.392",
+      "dateFinished": "2021-09-17 07:19:31.975",
+      "status": "FINISHED"
+    },
+    {
+      "text": "case class Registro(palabra:String)",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 07:19:31.992",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "defined class Registro\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1631855361194_1253157526",
+      "id": "paragraph_1631855361194_1253157526",
+      "dateCreated": "2021-09-17 07:09:21.194",
+      "dateStarted": "2021-09-17 07:19:31.995",
+      "dateFinished": "2021-09-17 07:19:32.136",
+      "status": "FINISHED"
+    },
+    {
+      "text": "palabras.foreachRDD{ (rdd: RDD[String], time: Time) \u003d\u003e\n    import spark.implicits._\n    \n    val palabrasDF \u003d rdd.map(p \u003d\u003e Registro(p)).toDF()\n    \n    palabrasDF.createOrReplaceTempView(\"palabras\")\n    \n    val contadorPalabrasDF \u003d spark.sql(\"select palabra,count(*) as total from palabras group by palabra\")\n    println(s\"*************${time}***********\")\n    contadorPalabrasDF.show()\n}",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 07:19:32.196",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1631855405581_1098190448",
+      "id": "paragraph_1631855405581_1098190448",
+      "dateCreated": "2021-09-17 07:10:05.581",
+      "dateStarted": "2021-09-17 07:19:32.201",
+      "dateFinished": "2021-09-17 07:19:33.023",
+      "status": "FINISHED"
+    },
+    {
+      "text": "ssc.start()\nssc.awaitTermination()",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 07:19:33.101",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Unexpected exception: java.lang.RuntimeException: java.lang.InterruptedException: sleep interrupted\n\tat org.apache.zeppelin.notebook.Paragraph.execute(Paragraph.java:376)\n\tat org.apache.zeppelin.notebook.Note.run(Note.java:876)\n\tat org.apache.zeppelin.service.NotebookService.runParagraph(NotebookService.java:368)\n\tat org.apache.zeppelin.service.NotebookService.runAllParagraphs(NotebookService.java:424)\n\tat org.apache.zeppelin.socket.NotebookServer.runAllParagraphs(NotebookServer.java:1488)\n\tat org.apache.zeppelin.socket.NotebookServer.onMessage(NotebookServer.java:362)\n\tat org.apache.zeppelin.socket.NotebookSocket.onWebSocketText(NotebookSocket.java:58)\n\tat org.eclipse.jetty.websocket.common.events.JettyListenerEventDriver.onTextMessage(JettyListenerEventDriver.java:231)\n\tat org.eclipse.jetty.websocket.common.message.SimpleTextMessage.messageComplete(SimpleTextMessage.java:69)\n\tat org.eclipse.jetty.websocket.common.events.AbstractEventDriver.appendMessage(AbstractEventDriver.java:65)\n\tat org.eclipse.jetty.websocket.common.events.JettyListenerEventDriver.onTextFrame(JettyListenerEventDriver.java:179)\n\tat org.eclipse.jetty.websocket.common.events.AbstractEventDriver.incomingFrame(AbstractEventDriver.java:150)\n\tat org.eclipse.jetty.websocket.common.WebSocketSession.incomingFrame(WebSocketSession.java:326)\n\tat org.eclipse.jetty.websocket.common.extensions.AbstractExtension.nextIncomingFrame(AbstractExtension.java:147)\n\tat org.eclipse.jetty.websocket.common.extensions.compress.PerMessageDeflateExtension.nextIncomingFrame(PerMessageDeflateExtension.java:112)\n\tat org.eclipse.jetty.websocket.common.extensions.compress.CompressExtension.forwardIncoming(CompressExtension.java:168)\n\tat org.eclipse.jetty.websocket.common.extensions.compress.PerMessageDeflateExtension.incomingFrame(PerMessageDeflateExtension.java:92)\n\tat org.eclipse.jetty.websocket.common.extensions.ExtensionStack.incomingFrame(ExtensionStack.java:202)\n\tat org.eclipse.jetty.websocket.common.Parser.notifyFrame(Parser.java:225)\n\tat org.eclipse.jetty.websocket.common.Parser.parseSingleFrame(Parser.java:259)\n\tat org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onFillable(AbstractWebSocketConnection.java:459)\n\tat org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onFillable(AbstractWebSocketConnection.java:440)\n\tat org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)\n\tat org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)\n\tat org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)\n\tat org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:806)\n\tat org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:938)\n\tat java.lang.Thread.run(Thread.java:748)\nCaused by: java.lang.InterruptedException: sleep interrupted\n\tat java.lang.Thread.sleep(Native Method)\n\tat org.apache.zeppelin.notebook.Paragraph.execute(Paragraph.java:374)\n\t... 27 more\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1631854899240_994784301",
+      "id": "paragraph_1631854899240_994784301",
+      "dateCreated": "2021-09-17 07:01:39.240",
+      "dateStarted": "2021-09-17 07:19:33.105",
+      "status": "ERROR"
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1631855708946_1273103516",
+      "id": "paragraph_1631855708946_1273103516",
+      "dateCreated": "2021-09-17 07:15:08.946",
+      "status": "READY"
+    }
+  ],
+  "name": "10.Palabras Straming SQL",
+  "id": "2GHWA722B",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {
+    "isRunning": true
+  }
+}

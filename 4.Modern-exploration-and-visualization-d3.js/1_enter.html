@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <title>D3</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+  </head>
+
+  <body>
+    <!-- div es un Elemento contenedor. Como el elemento g para svg.-->
+    <div>
+      <!--Elemento Parrafo-->
+      <p>Texto Ejemplo</p>
+      <!--p> </p-->
+      <!--p> </p-->
+      <!--p> </p-->
+    </div>
+
+    <script>
+      //Array
+      //var dataset = [1, 2, 3, 4];
+      //var dataset = ["Mensaje 1", "Mensaje 2", "Mensaje 3", "Mensaje 4"];
+      //var dataset = ["Mensaje", "Mensaje", "Mensaje", "Mensaje"];
+      //var dataset = ["Texto Modificado"];
+
+      //Array de Objetos
+      var dataset = [
+        {
+          x: 20,
+          y: 30,
+          r: 10,
+        },
+        {
+          x: 50,
+          y: 55,
+          r: 20,
+        },
+        {
+          x: 80,
+          y: 90,
+          r: 25,
+        },
+        {
+          x: 110,
+          y: 60,
+          r: 15,
+        },
+        {
+          x: 150,
+          y: 30,
+          r: 5,
+        },
+      ];
+
+      //Actualizamos con nuestro datos elementos p EXISTENTES
+      /*d3
+            .selectAll('p')
+            .data(dataset)
+            .text((d) => {
+                return d
+            })*/
+
+      // Introducimos datos de forma dinamica en elementos creados via D3
+      d3.select("div")
+        .selectAll("p")
+        .data(dataset)
+        .enter()
+        .append("p")
+        .text((d) => {
+          return d.x;
+        });
+      //nota: (d)=>{ return d.x} es lo mismo que: function(d){ return d.x}
+
+      //Si queremos Actualizar elementos existentes y Crear tantos nuevos elementos como datos tenga nuestro array podemos concatenar las dos declaraciones anteriores.
+      /*d3.selectAll('p')
+            .data(dataset)
+            .text((d) => {
+                return d
+            });
+
+        d3.select("div")
+            .selectAll('p')
+            .data(dataset)
+            .enter()
+            .append('p')
+            .text((d) => {
+                return d.x;
+            })*/
+
+      //O mas eficientemente con el metodo .merge(). Este metodo queda fuera del temario del curso. Solo por curiosidad.
+
+      /*var selection = d3.select("div")
+        .selectAll("p")
+        .data(dataset)
+
+        selection.enter()
+        .append('p')
+        .merge(selection)
+        .text(function(d) {
+            return d;
+        });*/
+    </script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+[{
+        "platform": "Blackberry",
+        "department": "IT",
+        "color": "green",
+        "value": 5
+    },
+    {
+        "platform": "Blackberry",
+        "department": "Finance",
+        "color": "green",
+        "value": 15
+    },
+    {
+        "platform": "Blackberry",
+        "department": "HR",
+        "color": "green",
+        "value": 10
+    },
+    {
+        "platform": "Blackberry",
+        "department": "Customer Service",
+        "color": "green",
+        "value": 2
+    }, {
+        "platform": "Windows",
+        "department": "IT",
+        "color": "gray",
+        "value": 20
+    }, {
+        "platform": "Windows",
+        "department": "Finance",
+        "color": "gray",
+        "value": 10
+    }, {
+        "platform": "Windows",
+        "department": "HR",
+        "color": "gray",
+        "value": 6
+    }, {
+        "platform": "Windows",
+        "department": "Customer Service",
+        "color": "gray",
+        "value": 4
+    }, {
+        "platform": "Ios",
+        "department": "IT",
+        "color": "orange",
+        "value": 20
+    }, {
+        "platform": "Ios",
+        "department": "Finance",
+        "color": "orange",
+        "value": 16
+    }, {
+        "platform": "Ios",
+        "department": "HR",
+        "color": "orange",
+        "value": 12
+    }, {
+        "platform": "Ios",
+        "department": "Customer Service",
+        "color": "orange",
+        "value": 1
+    }, {
+        "platform": "Android",
+        "department": "Finance",
+        "color": "blue",
+        "value": 3
+    }, {
+        "platform": "Android",
+        "department": "HR",
+        "color": "blue",
+        "value": 10
+    }, {
+        "platform": "Android",
+        "department": "IT",
+        "color": "blue",
+        "value": 20
+    }, {
+        "platform": "Android",
+        "department": "Customer Service",
+        "color": "blue",
+        "value": 3
+    }
+]

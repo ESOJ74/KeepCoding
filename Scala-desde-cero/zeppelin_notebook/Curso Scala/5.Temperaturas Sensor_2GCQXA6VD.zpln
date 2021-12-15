@@ -1,0 +1,428 @@
+{
+  "paragraphs": [
+    {
+      "text": "import org.apache.spark._\nimport scala.math.max",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 03:54:31.990",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark._\nimport scala.math.max\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625384683111_1501877910",
+      "id": "paragraph_1625384683111_1501877910",
+      "dateCreated": "2021-07-04 09:44:43.111",
+      "dateStarted": "2021-09-17 03:54:31.993",
+      "dateFinished": "2021-09-17 03:54:32.106",
+      "status": "FINISHED"
+    },
+    {
+      "text": "// lineas es un RDD\n\nval fichero \u003d sc.textFile(\"./notebook/Curso_Scala/1800.csv\")",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 03:54:32.193",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mfichero\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[String]\u001b[0m \u003d ./notebook/Curso_Scala/1800.csv MapPartitionsRDD[6] at textFile at \u003cconsole\u003e:35\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625384731335_2001037439",
+      "id": "paragraph_1625384731335_2001037439",
+      "dateCreated": "2021-07-04 09:45:31.335",
+      "dateStarted": "2021-09-17 03:54:32.205",
+      "dateFinished": "2021-09-17 03:54:32.389",
+      "status": "FINISHED"
+    },
+    {
+      "text": "// procesar la info cargada en formato RDD\n\ndef procesarLinea(linea:String) \u003d {\n    val campos \u003d linea.split(\",\")\n    val estacionMeteo \u003d campos(0)\n    val tipoInfo \u003d campos(2)\n    val temperatura \u003d campos(3).toFloat * 0.1f * (9.0f / 5.0f) + 32.0f\n    (estacionMeteo,tipoInfo,temperatura)   // retorna una tupla\n}",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 03:54:32.400",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mprocesarLinea\u001b[0m: \u001b[1m\u001b[32m(linea: String)(String, String, Float)\u001b[0m\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625384795817_157122293",
+      "id": "paragraph_1625384795817_157122293",
+      "dateCreated": "2021-07-04 09:46:35.817",
+      "dateStarted": "2021-09-17 03:54:32.403",
+      "dateFinished": "2021-09-17 03:54:32.564",
+      "status": "FINISHED"
+    },
+    {
+      "text": "// aplicar el proceso procesarLinea a cada linea de fichero\n// aplicar la transformacion map\n\nval lineasProcesadas \u003d fichero.map(procesarLinea)",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 03:55:20.499",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mlineasProcesadas\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[(String, String, Float)]\u001b[0m \u003d MapPartitionsRDD[7] at map at \u003cconsole\u003e:38\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625385118962_153807032",
+      "id": "paragraph_1625385118962_153807032",
+      "dateCreated": "2021-07-04 09:51:58.962",
+      "dateStarted": "2021-09-17 03:54:32.611",
+      "dateFinished": "2021-09-17 03:54:32.877",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val temperaturasMaximas \u003d lineasProcesadas.filter(elemento \u003d\u003e elemento._2 \u003d\u003d \"TMAX\")    // en scala la posicion del primer elemento de una tupla es 1",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 03:54:32.911",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mtemperaturasMaximas\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[(String, String, Float)]\u001b[0m \u003d MapPartitionsRDD[8] at filter at \u003cconsole\u003e:33\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625385243325_789135500",
+      "id": "paragraph_1625385243325_789135500",
+      "dateCreated": "2021-07-04 09:54:03.325",
+      "dateStarted": "2021-09-17 03:54:32.915",
+      "dateFinished": "2021-09-17 03:54:33.113",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val estacionYTemperaturas \u003d temperaturasMaximas.map(elemento \u003d\u003e (elemento._1, elemento._3.toFloat))",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 03:54:33.115",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mestacionYTemperaturas\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[(String, Float)]\u001b[0m \u003d MapPartitionsRDD[9] at map at \u003cconsole\u003e:33\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625385374857_1485183548",
+      "id": "paragraph_1625385374857_1485183548",
+      "dateCreated": "2021-07-04 09:56:14.858",
+      "dateStarted": "2021-09-17 03:54:33.125",
+      "dateFinished": "2021-09-17 03:54:33.388",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val tempMaxPorEstacion \u003d estacionYTemperaturas.reduceByKey((valor_tupla1, valor_tupla2) \u003d\u003e max(valor_tupla1, valor_tupla2))",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 03:54:33.423",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mtempMaxPorEstacion\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[(String, Float)]\u001b[0m \u003d ShuffledRDD[10] at reduceByKey at \u003cconsole\u003e:33\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625385514752_1440510085",
+      "id": "paragraph_1625385514752_1440510085",
+      "dateCreated": "2021-07-04 09:58:34.752",
+      "dateStarted": "2021-09-17 03:54:33.427",
+      "dateFinished": "2021-09-17 03:54:33.824",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val resultados \u003d tempMaxPorEstacion.collect()",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 03:54:33.826",
+      "progress": 50,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mresultados\u001b[0m: \u001b[1m\u001b[32mArray[(String, Float)]\u001b[0m \u003d Array((EZE00100082,90.14), (ITE00100554,90.14))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d1"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625385612205_640428499",
+      "id": "paragraph_1625385612205_640428499",
+      "dateCreated": "2021-07-04 10:00:12.205",
+      "dateStarted": "2021-09-17 03:54:33.832",
+      "dateFinished": "2021-09-17 03:54:34.373",
+      "status": "FINISHED"
+    },
+    {
+      "text": "for(resultado \u003c- resultados.sorted){\n    \n    val estacion \u003d resultado._1\n    val temp \u003d resultado._2\n    val formato \u003d f\"${temp}%.2f Centígrados\"\n    println(s\"${estacion} tiene como temp. maxima ${formato}\")\n}",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 04:02:36.638",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "EZE00100082 tiene como temp. maxima 90,14 Centígrados\nITE00100554 tiene como temp. maxima 90,14 Centígrados\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625385742371_1790953833",
+      "id": "paragraph_1625385742371_1790953833",
+      "dateCreated": "2021-07-04 10:02:22.371",
+      "dateStarted": "2021-09-17 04:02:36.642",
+      "dateFinished": "2021-09-17 04:02:36.856",
+      "status": "FINISHED"
+    },
+    {
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 03:54:34.739",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625385970402_65075525",
+      "id": "paragraph_1625385970402_65075525",
+      "dateCreated": "2021-07-04 10:06:10.402",
+      "status": "FINISHED"
+    }
+  ],
+  "name": "5.Temperaturas Sensor",
+  "id": "2GCQXA6VD",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {
+    "isRunning": false
+  }
+}

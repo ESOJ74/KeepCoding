@@ -1,0 +1,368 @@
+{
+  "paragraphs": [
+    {
+      "text": "import org.apache.spark.{SparkConf,SparkContext}\nimport org.apache.spark.mllib.recommendation.{ALS, MatrixFactorizationModel, Rating}",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 07:31:49.143",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.{SparkConf, SparkContext}\nimport org.apache.spark.mllib.recommendation.{ALS, MatrixFactorizationModel, Rating}\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625391694726_382424855",
+      "id": "paragraph_1625391694726_382424855",
+      "dateCreated": "2021-07-04 11:41:34.726",
+      "dateStarted": "2021-09-17 07:31:49.150",
+      "dateFinished": "2021-09-17 07:31:49.346",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val data \u003d sc.textFile(\"./notebook/Curso_Scala/test.data\")",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 07:31:53.201",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mdata\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[String]\u001b[0m \u003d ./notebook/Curso_Scala/test.data MapPartitionsRDD[4] at textFile at \u003cconsole\u003e:32\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625391776729_534302679",
+      "id": "paragraph_1625391776729_534302679",
+      "dateCreated": "2021-07-04 11:42:56.729",
+      "dateStarted": "2021-09-17 07:31:53.211",
+      "dateFinished": "2021-09-17 07:31:53.447",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val ratings \u003d data.map(_.split(\",\") match {case Array(user,item,rate) \u003d\u003e Rating(user.toInt,item.toInt,rate.toDouble)})",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 07:32:36.129",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mratings\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[org.apache.spark.mllib.recommendation.Rating]\u001b[0m \u003d MapPartitionsRDD[6] at map at \u003cconsole\u003e:32\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625391903780_920710398",
+      "id": "paragraph_1625391903780_920710398",
+      "dateCreated": "2021-07-04 11:45:03.780",
+      "dateStarted": "2021-09-17 07:32:36.137",
+      "dateFinished": "2021-09-17 07:32:36.395",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val rank \u003d 10\nval numeroIteraciones \u003d 10\nval modelo \u003d ALS.train(ratings,rank,numeroIteraciones,0.01)",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 07:32:44.721",
+      "progress": 97,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mrank\u001b[0m: \u001b[1m\u001b[32mInt\u001b[0m \u003d 10\n\u001b[1m\u001b[34mnumeroIteraciones\u001b[0m: \u001b[1m\u001b[32mInt\u001b[0m \u003d 10\n\u001b[1m\u001b[34mmodelo\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.mllib.recommendation.MatrixFactorizationModel\u001b[0m \u003d org.apache.spark.mllib.recommendation.MatrixFactorizationModel@394f3d74\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d0"
+            },
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d1"
+            },
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d2"
+            },
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d3"
+            },
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d4"
+            },
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d5"
+            },
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d6"
+            },
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d7"
+            },
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d8"
+            },
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d9"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625392015326_532877437",
+      "id": "paragraph_1625392015326_532877437",
+      "dateCreated": "2021-07-04 11:46:55.326",
+      "dateStarted": "2021-09-17 07:32:44.727",
+      "dateFinished": "2021-09-17 07:32:47.509",
+      "status": "FINISHED"
+    },
+    {
+      "text": "// Evaluacion del modelo\n\nval productosUsuarios \u003d ratings.map { case Rating(user,product,rate) \u003d\u003e (user,product)}",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 07:33:29.210",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mproductosUsuarios\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[(Int, Int)]\u001b[0m \u003d MapPartitionsRDD[214] at map at \u003cconsole\u003e:34\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625392094700_1870651039",
+      "id": "paragraph_1625392094700_1870651039",
+      "dateCreated": "2021-07-04 11:48:14.700",
+      "dateStarted": "2021-09-17 07:33:29.222",
+      "dateFinished": "2021-09-17 07:33:29.642",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val predicciones \u003d modelo.predict(productosUsuarios).map {case Rating(user,product,rate) \u003d\u003e ((user,product),rate)}",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 07:33:32.576",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mpredicciones\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[((Int, Int), Double)]\u001b[0m \u003d MapPartitionsRDD[224] at map at \u003cconsole\u003e:34\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d10"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625392174246_1659290674",
+      "id": "paragraph_1625392174246_1659290674",
+      "dateCreated": "2021-07-04 11:49:34.246",
+      "dateStarted": "2021-09-17 07:33:32.582",
+      "dateFinished": "2021-09-17 07:33:32.949",
+      "status": "FINISHED"
+    },
+    {
+      "text": "predicciones.collect()",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 07:33:35.715",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mres1\u001b[0m: \u001b[1m\u001b[32mArray[((Int, Int), Double)]\u001b[0m \u003d Array(((1,1),4.995813027729041), ((1,2),1.0012051484589306), ((1,3),4.995813027729041), ((1,4),1.0012051484589306), ((2,1),4.995813027729041), ((2,2),1.0012051484589306), ((2,3),4.995813027729041), ((2,4),1.0012051484589306), ((3,1),1.0012435544932772), ((3,2),4.995620954501664), ((3,3),1.0012435544932772), ((3,4),4.995620954501664), ((4,1),1.0012435544932772), ((4,2),4.995620954501664), ((4,3),1.0012435544932772), ((4,4),4.995620954501664))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d11"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625392346449_1777905033",
+      "id": "paragraph_1625392346449_1777905033",
+      "dateCreated": "2021-07-04 11:52:26.449",
+      "dateStarted": "2021-09-17 07:33:35.724",
+      "dateFinished": "2021-09-17 07:33:36.078",
+      "status": "FINISHED"
+    }
+  ],
+  "name": "11.Recomendador",
+  "id": "2GCBV129A",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

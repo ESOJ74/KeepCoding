@@ -1,0 +1,21 @@
+.container {
+  /*Especifico como deseo que se situen los 2 div dentro del contenedor.*/
+  display: flex;
+  flex-direction: row;
+  /*Eligo una serie de font-families. Si el navegador no reconoce la primera, lo intenta con las siguiente. Propiedad del container => afecta a las 2 gráficas.*/
+  font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
+    sans-serif;
+}
+
+.tooltip {
+  position: absolute;
+  /*Para obtener la posicion correcta sobre los circulos*/
+  pointer-events: none;
+  /*Para evitar el flicker*/
+  visibility: hidden;
+  background-color: white;
+  border: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 5px;
+}

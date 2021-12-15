@@ -1,0 +1,600 @@
+{
+  "paragraphs": [
+    {
+      "text": "import org.apache.spark._\nimport org.apache.spark.SparkContext._\nimport org.apache.spark.sql._\nimport spark.implicits._\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 04:53:20.755",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark._\nimport org.apache.spark.SparkContext._\nimport org.apache.spark.sql._\nimport spark.implicits._\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625388149764_1058159096",
+      "id": "paragraph_1625388149764_1058159096",
+      "dateCreated": "2021-07-04 10:42:29.765",
+      "dateStarted": "2021-09-17 04:53:20.761",
+      "dateFinished": "2021-09-17 04:53:21.618",
+      "status": "FINISHED"
+    },
+    {
+      "text": "case class Persona (ID:Int, nombre:String, edad:Int, numeroAmigos:Int)",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 04:53:21.968",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "defined class Persona\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625388190102_816860706",
+      "id": "paragraph_1625388190102_816860706",
+      "dateCreated": "2021-07-04 10:43:10.102",
+      "dateStarted": "2021-09-17 04:53:21.973",
+      "dateFinished": "2021-09-17 04:53:22.076",
+      "status": "FINISHED"
+    },
+    {
+      "text": "def procesarPersona(linea:String):Persona \u003d {\n    \n    val campos \u003d linea.split(\",\")  //array campos\n    val persona \u003d Persona(campos(0).toInt, campos(1), campos(2).toInt, campos(3).toInt)\n    persona\n}",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 04:53:23.024",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mprocesarPersona\u001b[0m: \u001b[1m\u001b[32m(linea: String)Persona\u001b[0m\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625388249900_863050938",
+      "id": "paragraph_1625388249900_863050938",
+      "dateCreated": "2021-07-04 10:44:09.900",
+      "dateStarted": "2021-09-17 04:53:23.032",
+      "dateFinished": "2021-09-17 04:53:23.278",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val spark \u003d SparkSession.builder.appName(\"SQL API\").getOrCreate()",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 04:53:24.372",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mspark\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.SparkSession\u001b[0m \u003d org.apache.spark.sql.SparkSession@61237c3c\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625388308701_356222445",
+      "id": "paragraph_1625388308701_356222445",
+      "dateCreated": "2021-07-04 10:45:08.701",
+      "dateStarted": "2021-09-17 04:53:24.376",
+      "dateFinished": "2021-09-17 04:53:24.572",
+      "status": "FINISHED"
+    },
+    {
+      "text": "var lineas \u003d spark.sparkContext.textFile(\"./notebook/Curso_Scala/friends.csv\")",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 04:53:28.753",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mlineas\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[String]\u001b[0m \u003d ./notebook/Curso_Scala/friends.csv MapPartitionsRDD[42] at textFile at \u003cconsole\u003e:82\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625388342291_1582199217",
+      "id": "paragraph_1625388342291_1582199217",
+      "dateCreated": "2021-07-04 10:45:42.291",
+      "dateStarted": "2021-09-17 04:53:28.763",
+      "dateFinished": "2021-09-17 04:53:29.072",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val personas \u003d lineas.map(procesarPersona)",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 04:53:35.463",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mpersonas\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[Persona]\u001b[0m \u003d MapPartitionsRDD[43] at map at \u003cconsole\u003e:84\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625388379056_2139306509",
+      "id": "paragraph_1625388379056_2139306509",
+      "dateCreated": "2021-07-04 10:46:19.056",
+      "dateStarted": "2021-09-17 04:53:35.472",
+      "dateFinished": "2021-09-17 04:53:35.792",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val personasDSCacheado \u003d personas.toDS().cache()\npersonasDSCacheado.printSchema",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 04:56:10.427",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- ID: integer (nullable \u003d false)\n |-- nombre: string (nullable \u003d true)\n |-- edad: integer (nullable \u003d false)\n |-- numeroAmigos: integer (nullable \u003d false)\n\n\u001b[1m\u001b[34mpersonasDSCacheado\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.Dataset[Persona]\u001b[0m \u003d [ID: int, nombre: string ... 2 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625388421546_1168017042",
+      "id": "paragraph_1625388421546_1168017042",
+      "dateCreated": "2021-07-04 10:47:01.546",
+      "dateStarted": "2021-09-17 04:56:10.470",
+      "dateFinished": "2021-09-17 04:56:10.825",
+      "status": "FINISHED"
+    },
+    {
+      "text": "// uso de API en lugar del SQL literal\n\npersonasDSCacheado.select(\"nombre\").show()",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 05:03:41.794",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+\n|  nombre|\n+--------+\n|    Will|\n|Jean-Luc|\n|    Hugh|\n|  Deanna|\n|   Quark|\n|  Weyoun|\n|  Gowron|\n|    Will|\n|  Jadzia|\n|    Hugh|\n|     Odo|\n|     Ben|\n|   Keiko|\n|Jean-Luc|\n|    Hugh|\n|     Rom|\n|  Weyoun|\n|     Odo|\n|Jean-Luc|\n|  Geordi|\n+--------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d40"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625388457477_1319264073",
+      "id": "paragraph_1625388457477_1319264073",
+      "dateCreated": "2021-07-04 10:47:37.477",
+      "dateStarted": "2021-09-17 05:03:41.798",
+      "dateFinished": "2021-09-17 05:03:42.080",
+      "status": "FINISHED"
+    },
+    {
+      "text": "personasDSCacheado.filter(personasDSCacheado(\"edad\") \u003c 21).show()",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 04:56:16.164",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+-------+----+------------+\n| ID| nombre|edad|numeroAmigos|\n+---+-------+----+------------+\n| 21|  Miles|  19|         268|\n| 48|    Nog|  20|           1|\n| 52|Beverly|  19|         269|\n| 54|  Brunt|  19|           5|\n| 60| Geordi|  20|         100|\n| 73|  Brunt|  20|         384|\n|106|Beverly|  18|         499|\n|115|  Dukat|  18|         397|\n|133|  Quark|  19|         265|\n|136|   Will|  19|         335|\n|225|   Elim|  19|         106|\n|304|   Will|  19|         404|\n|327| Julian|  20|          63|\n|341|   Data|  18|         326|\n|349| Kasidy|  20|         277|\n|366|  Keiko|  19|         119|\n|373|  Quark|  19|         272|\n|377|Beverly|  18|         418|\n|404| Kasidy|  18|          24|\n|409|    Nog|  19|         267|\n+---+-------+----+------------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d15"
+            },
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d16"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625388534347_1179885454",
+      "id": "paragraph_1625388534347_1179885454",
+      "dateCreated": "2021-07-04 10:48:54.348",
+      "dateStarted": "2021-09-17 04:56:16.167",
+      "dateFinished": "2021-09-17 04:56:16.494",
+      "status": "FINISHED"
+    },
+    {
+      "text": "personasDSCacheado.groupBy(\"edad\").count().show()",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 04:59:42.345",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----+-----+\n|edad|count|\n+----+-----+\n|  31|    8|\n|  65|    5|\n|  53|    7|\n|  34|    6|\n|  28|   10|\n|  26|   17|\n|  27|    8|\n|  44|   12|\n|  22|    7|\n|  47|    9|\n|  52|   11|\n|  40|   17|\n|  20|    5|\n|  57|   12|\n|  54|   13|\n|  48|   10|\n|  19|   11|\n|  64|   12|\n|  41|    9|\n|  43|    7|\n+----+-----+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d33"
+            },
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d34"
+            },
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d35"
+            },
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d36"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625388635106_817278042",
+      "id": "paragraph_1625388635106_817278042",
+      "dateCreated": "2021-07-04 10:50:35.106",
+      "dateStarted": "2021-09-17 04:59:42.352",
+      "dateFinished": "2021-09-17 04:59:42.811",
+      "status": "FINISHED"
+    },
+    {
+      "text": "personasDSCacheado.select(personasDSCacheado(\"nombre\"),personasDSCacheado(\"edad\") + 10).show()",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 05:06:49.251",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+-----------+\n|  nombre|(edad + 10)|\n+--------+-----------+\n|    Will|         43|\n|Jean-Luc|         36|\n|    Hugh|         65|\n|  Deanna|         50|\n|   Quark|         78|\n|  Weyoun|         69|\n|  Gowron|         47|\n|    Will|         64|\n|  Jadzia|         48|\n|    Hugh|         37|\n|     Odo|         63|\n|     Ben|         67|\n|   Keiko|         64|\n|Jean-Luc|         66|\n|    Hugh|         53|\n|     Rom|         46|\n|  Weyoun|         32|\n|     Odo|         45|\n|Jean-Luc|         55|\n|  Geordi|         70|\n+--------+-----------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d43"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625388695274_802062606",
+      "id": "paragraph_1625388695274_802062606",
+      "dateCreated": "2021-07-04 10:51:35.274",
+      "dateStarted": "2021-09-17 05:06:49.258",
+      "dateFinished": "2021-09-17 05:06:49.514",
+      "status": "FINISHED"
+    },
+    {
+      "text": "personasDSCacheado.select($\"nombre\",$\"edad\" + 10).show()",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 05:07:40.823",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+-----------+\n|  nombre|(edad + 10)|\n+--------+-----------+\n|    Will|         43|\n|Jean-Luc|         36|\n|    Hugh|         65|\n|  Deanna|         50|\n|   Quark|         78|\n|  Weyoun|         69|\n|  Gowron|         47|\n|    Will|         64|\n|  Jadzia|         48|\n|    Hugh|         37|\n|     Odo|         63|\n|     Ben|         67|\n|   Keiko|         64|\n|Jean-Luc|         66|\n|    Hugh|         53|\n|     Rom|         46|\n|  Weyoun|         32|\n|     Odo|         45|\n|Jean-Luc|         55|\n|  Geordi|         70|\n+--------+-----------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d46"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1631847927688_442361662",
+      "id": "paragraph_1631847927688_442361662",
+      "dateCreated": "2021-09-17 05:05:27.688",
+      "dateStarted": "2021-09-17 05:07:40.831",
+      "dateFinished": "2021-09-17 05:07:41.106",
+      "status": "FINISHED"
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1631848010545_1014939895",
+      "id": "paragraph_1631848010545_1014939895",
+      "dateCreated": "2021-09-17 05:06:50.545",
+      "status": "READY"
+    }
+  ],
+  "name": "7.SQL Personas API",
+  "id": "2GAJFCHA5",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

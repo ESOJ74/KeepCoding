@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/exercise-1.iml" filepath="$PROJECT_DIR$/.idea/modules/exercise-1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/exercise-2.iml" filepath="$PROJECT_DIR$/.idea/modules/exercise-2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/exercise-3.iml" filepath="$PROJECT_DIR$/.idea/modules/exercise-3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/exercise-4.iml" filepath="$PROJECT_DIR$/.idea/modules/exercise-4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/exercise-5.iml" filepath="$PROJECT_DIR$/.idea/modules/exercise-5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/exercise-6.iml" filepath="$PROJECT_DIR$/.idea/modules/exercise-6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/exercise-7.iml" filepath="$PROJECT_DIR$/.idea/modules/exercise-7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/scala-exercise.iml" filepath="$PROJECT_DIR$/.idea/modules/scala-exercise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/scala-exercise-build.iml" filepath="$PROJECT_DIR$/.idea/modules/scala-exercise-build.iml" />
+    </modules>
+  </component>
+</project>

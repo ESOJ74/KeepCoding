@@ -1,0 +1,17 @@
+[{
+    "platform": "Blackberry",
+    "color": "green",
+    "value": 5
+}, {
+    "platform": "Windows",
+    "color": "gray",
+    "value": 10
+}, {
+    "platform": "Ios",
+    "color": "orange",
+    "value": 15
+}, {
+    "platform": "Android",
+    "color": "blue",
+    "value": 20
+}]

@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <title>D3</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+  </head>
+
+  <body>
+    <!--Elemento contenedor. Como el elemento g para svg.-->
+    <div></div>
+
+    <script>
+      var data = [
+        {
+          x: 20,
+          y: 30,
+          r: 10,
+        },
+        {
+          x: 50,
+          y: 55,
+          r: 20,
+        },
+        {
+          x: 80,
+          y: 90,
+          r: 25,
+        },
+        {
+          x: 110,
+          y: 60,
+          r: 15,
+        },
+        {
+          x: 150,
+          y: 30,
+          r: 5,
+        },
+      ];
+      // var data = [5, 10, 15, 20];
+
+      var svg = d3.select("div").append("svg");
+
+      svg.attr("width", 500).attr("height", 500);
+
+      var circle = svg.selectAll("circle").data(data).enter().append("circle");
+
+      circle
+        .attr("cx", (d) => {
+          return d.x;
+        })
+        .attr("cy", (d) => d.y)
+        .attr("r", function (d) {
+          return d.r;
+        });
+
+      circle
+        .transition() //Podemos asignar un id a cada transición para distinguir transicciones   simultaneas sobre el mismo elemento.  eg: .transition("t1")
+        .ease(d3.easeBounce)
+        .duration(2000)
+        .delay(2000)
+        .attr("fill", "green")
+        .attr("cx", (d) => {
+          return d.x * 3;
+        }); //Recordad: function(d){ return ...} es equivalente a (d)=>{return ...}
+
+      circle
+        .transition()
+        .ease(d3.easeBounce)
+        .duration(2000)
+        .delay(4000)
+        .attr("opacity", (d, i) => {
+          return 1 / (i + 1);
+        });
+
+      circle
+        .transition()
+        .ease(d3.easeLinear)
+        .duration(500)
+        .delay(6000)
+        .attr("r", (d, i) => {
+          return d.r * 1.5;
+        });
+    </script>
+  </body>
+</html>

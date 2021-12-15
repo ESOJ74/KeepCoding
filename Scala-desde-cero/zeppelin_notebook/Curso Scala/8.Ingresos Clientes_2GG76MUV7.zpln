@@ -1,0 +1,461 @@
+{
+  "paragraphs": [
+    {
+      "text": "import org.apache.spark._\nimport org.apache.spark.SparkContext._",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 05:09:30.153",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark._\nimport org.apache.spark.SparkContext._\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1631848140198_445392349",
+      "id": "paragraph_1631848140198_445392349",
+      "dateCreated": "2021-09-17 05:09:00.198",
+      "dateStarted": "2021-09-17 05:09:30.158",
+      "dateFinished": "2021-09-17 05:09:30.320",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val datosEntrada \u003d sc.textFile(\"./notebook/Curso_Scala/customer-orders.csv\")",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 05:10:53.405",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mdatosEntrada\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[String]\u001b[0m \u003d ./notebook/Curso_Scala/customer-orders.csv MapPartitionsRDD[176] at textFile at \u003cconsole\u003e:88\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1631848170157_825117357",
+      "id": "paragraph_1631848170157_825117357",
+      "dateCreated": "2021-09-17 05:09:30.157",
+      "dateStarted": "2021-09-17 05:10:53.411",
+      "dateFinished": "2021-09-17 05:10:53.646",
+      "status": "FINISHED"
+    },
+    {
+      "text": "def extraerClientePrecio(linea:String) \u003d {\n    \n    val campos \u003d linea.split(\",\")  //array campos\n    (campos(0).toInt,campos(2).toFloat)\n}",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 05:13:04.601",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mextraerClientePrecio\u001b[0m: \u001b[1m\u001b[32m(linea: String)(Int, Float)\u001b[0m\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1631848253410_376840242",
+      "id": "paragraph_1631848253410_376840242",
+      "dateCreated": "2021-09-17 05:10:53.410",
+      "dateStarted": "2021-09-17 05:13:04.610",
+      "dateFinished": "2021-09-17 05:13:04.819",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val datosProcesados \u003d datosEntrada.map(extraerClientePrecio)",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 05:13:48.336",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mdatosProcesados\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[(Int, Float)]\u001b[0m \u003d MapPartitionsRDD[177] at map at \u003cconsole\u003e:90\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1631848384609_887241893",
+      "id": "paragraph_1631848384609_887241893",
+      "dateCreated": "2021-09-17 05:13:04.609",
+      "dateStarted": "2021-09-17 05:13:48.341",
+      "dateFinished": "2021-09-17 05:13:48.812",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val totalPorCliente \u003d datosProcesados.reduceByKey((x,y) \u003d\u003e x + y)",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 05:15:22.457",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mtotalPorCliente\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[(Int, Float)]\u001b[0m \u003d ShuffledRDD[178] at reduceByKey at \u003cconsole\u003e:88\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1631848428340_150651721",
+      "id": "paragraph_1631848428340_150651721",
+      "dateCreated": "2021-09-17 05:13:48.340",
+      "dateStarted": "2021-09-17 05:15:22.461",
+      "dateFinished": "2021-09-17 05:15:22.835",
+      "status": "FINISHED"
+    },
+    {
+      "text": "var resultados \u003d totalPorCliente.collect().foreach(println)",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 05:15:58.295",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(34,5330.7993)\n(52,5245.0605)\n(96,3924.23)\n(4,4815.05)\n(16,4979.0605)\n(82,4812.49)\n(66,4681.92)\n(28,5000.7104)\n(54,6065.39)\n(80,4727.86)\n(98,4297.26)\n(30,4990.72)\n(14,4735.0303)\n(50,4517.2695)\n(36,4278.05)\n(24,5259.92)\n(64,5288.69)\n(92,5379.281)\n(74,4647.1304)\n(90,5290.41)\n(72,5337.4395)\n(70,5368.2505)\n(18,4921.27)\n(12,4664.59)\n(38,4898.461)\n(20,4836.86)\n(78,4524.51)\n(10,4819.6997)\n(94,4475.5703)\n(84,4652.9395)\n(56,4701.02)\n(76,4904.2104)\n(22,5019.449)\n(46,5963.111)\n(48,4384.3296)\n(32,5496.0503)\n(0,5524.9497)\n(62,5253.3213)\n(42,5696.8403)\n(40,5186.4297)\n(6,5397.8794)\n(8,5517.24)\n(86,4908.809)\n(58,5437.7305)\n(44,4756.8906)\n(88,4830.55)\n(60,5040.7095)\n(26,5250.4004)\n(68,6375.45)\n(2,5994.591)\n(13,4367.62)\n(19,5059.4307)\n(39,6193.1104)\n(81,5112.71)\n(71,5995.66)\n(55,5298.09)\n(29,5032.5303)\n(79,3790.5698)\n(65,5140.3496)\n(11,5152.29)\n(35,5155.42)\n(57,4628.3994)\n(51,4975.2197)\n(37,4735.2)\n(75,4178.5)\n(45,3309.3804)\n(1,4958.5996)\n(89,4851.4795)\n(63,5415.15)\n(83,4635.8003)\n(17,5032.6797)\n(9,5322.6494)\n(49,4394.5996)\n(43,5368.83)\n(99,4172.29)\n(41,5637.619)\n(61,5497.48)\n(15,5413.5103)\n(21,4707.41)\n(47,4316.3)\n(77,4327.7305)\n(53,4945.3)\n(97,5977.1895)\n(25,5057.6104)\n(95,4876.8394)\n(59,5642.8906)\n(73,6206.199)\n(27,4915.8896)\n(93,5265.75)\n(33,5254.659)\n(23,4042.65)\n(67,4505.79)\n(69,5123.01)\n(3,4659.63)\n(7,4755.0693)\n(85,5503.4307)\n(91,4642.2603)\n(31,4765.05)\n(87,5206.3994)\n(5,4561.0703)\n\u001b[1m\u001b[34mresultados\u001b[0m: \u001b[1m\u001b[32mUnit\u001b[0m \u003d ()\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d47"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1631848522461_1696759638",
+      "id": "paragraph_1631848522461_1696759638",
+      "dateCreated": "2021-09-17 05:15:22.461",
+      "dateStarted": "2021-09-17 05:15:58.302",
+      "dateFinished": "2021-09-17 05:15:58.775",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val totalPorClienteOrdenadoPorGasto \u003d totalPorCliente.map(elemento \u003d\u003e (elemento._2,elemento._1)).sortByKey().collect().foreach(println)",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 05:21:49.930",
+      "progress": 66,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(3309.3804,45)\n(3790.5698,79)\n(3924.23,96)\n(4042.65,23)\n(4172.29,99)\n(4178.5,75)\n(4278.05,36)\n(4297.26,98)\n(4316.3,47)\n(4327.7305,77)\n(4367.62,13)\n(4384.3296,48)\n(4394.5996,49)\n(4475.5703,94)\n(4505.79,67)\n(4517.2695,50)\n(4524.51,78)\n(4561.0703,5)\n(4628.3994,57)\n(4635.8003,83)\n(4642.2603,91)\n(4647.1304,74)\n(4652.9395,84)\n(4659.63,3)\n(4664.59,12)\n(4681.92,66)\n(4701.02,56)\n(4707.41,21)\n(4727.86,80)\n(4735.0303,14)\n(4735.2,37)\n(4755.0693,7)\n(4756.8906,44)\n(4765.05,31)\n(4812.49,82)\n(4815.05,4)\n(4819.6997,10)\n(4830.55,88)\n(4836.86,20)\n(4851.4795,89)\n(4876.8394,95)\n(4898.461,38)\n(4904.2104,76)\n(4908.809,86)\n(4915.8896,27)\n(4921.27,18)\n(4945.3,53)\n(4958.5996,1)\n(4975.2197,51)\n(4979.0605,16)\n(4990.72,30)\n(5000.7104,28)\n(5019.449,22)\n(5032.5303,29)\n(5032.6797,17)\n(5040.7095,60)\n(5057.6104,25)\n(5059.4307,19)\n(5112.71,81)\n(5123.01,69)\n(5140.3496,65)\n(5152.29,11)\n(5155.42,35)\n(5186.4297,40)\n(5206.3994,87)\n(5245.0605,52)\n(5250.4004,26)\n(5253.3213,62)\n(5254.659,33)\n(5259.92,24)\n(5265.75,93)\n(5288.69,64)\n(5290.41,90)\n(5298.09,55)\n(5322.6494,9)\n(5330.7993,34)\n(5337.4395,72)\n(5368.2505,70)\n(5368.83,43)\n(5379.281,92)\n(5397.8794,6)\n(5413.5103,15)\n(5415.15,63)\n(5437.7305,58)\n(5496.0503,32)\n(5497.48,61)\n(5503.4307,85)\n(5517.24,8)\n(5524.9497,0)\n(5637.619,41)\n(5642.8906,59)\n(5696.8403,42)\n(5963.111,46)\n(5977.1895,97)\n(5994.591,2)\n(5995.66,71)\n(6065.39,54)\n(6193.1104,39)\n(6206.199,73)\n(6375.45,68)\n\u001b[1m\u001b[34mtotalPorClienteOrdenadoPorGasto\u001b[0m: \u001b[1m\u001b[32mUnit\u001b[0m \u003d ()\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d50"
+            },
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d51"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1631848558301_1231651108",
+      "id": "paragraph_1631848558301_1231651108",
+      "dateCreated": "2021-09-17 05:15:58.301",
+      "dateStarted": "2021-09-17 05:21:49.936",
+      "dateFinished": "2021-09-17 05:21:50.444",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val totalPorClienteOrdenadoPorGasto \u003d totalPorCliente.map(elemento \u003d\u003e (elemento._2,elemento._1)).sortByKey(false).collect().foreach(println)",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 05:23:21.044",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(6375.45,68)\n(6206.199,73)\n(6193.1104,39)\n(6065.39,54)\n(5995.66,71)\n(5994.591,2)\n(5977.1895,97)\n(5963.111,46)\n(5696.8403,42)\n(5642.8906,59)\n(5637.619,41)\n(5524.9497,0)\n(5517.24,8)\n(5503.4307,85)\n(5497.48,61)\n(5496.0503,32)\n(5437.7305,58)\n(5415.15,63)\n(5413.5103,15)\n(5397.8794,6)\n(5379.281,92)\n(5368.83,43)\n(5368.2505,70)\n(5337.4395,72)\n(5330.7993,34)\n(5322.6494,9)\n(5298.09,55)\n(5290.41,90)\n(5288.69,64)\n(5265.75,93)\n(5259.92,24)\n(5254.659,33)\n(5253.3213,62)\n(5250.4004,26)\n(5245.0605,52)\n(5206.3994,87)\n(5186.4297,40)\n(5155.42,35)\n(5152.29,11)\n(5140.3496,65)\n(5123.01,69)\n(5112.71,81)\n(5059.4307,19)\n(5057.6104,25)\n(5040.7095,60)\n(5032.6797,17)\n(5032.5303,29)\n(5019.449,22)\n(5000.7104,28)\n(4990.72,30)\n(4979.0605,16)\n(4975.2197,51)\n(4958.5996,1)\n(4945.3,53)\n(4921.27,18)\n(4915.8896,27)\n(4908.809,86)\n(4904.2104,76)\n(4898.461,38)\n(4876.8394,95)\n(4851.4795,89)\n(4836.86,20)\n(4830.55,88)\n(4819.6997,10)\n(4815.05,4)\n(4812.49,82)\n(4765.05,31)\n(4756.8906,44)\n(4755.0693,7)\n(4735.2,37)\n(4735.0303,14)\n(4727.86,80)\n(4707.41,21)\n(4701.02,56)\n(4681.92,66)\n(4664.59,12)\n(4659.63,3)\n(4652.9395,84)\n(4647.1304,74)\n(4642.2603,91)\n(4635.8003,83)\n(4628.3994,57)\n(4561.0703,5)\n(4524.51,78)\n(4517.2695,50)\n(4505.79,67)\n(4475.5703,94)\n(4394.5996,49)\n(4384.3296,48)\n(4367.62,13)\n(4327.7305,77)\n(4316.3,47)\n(4297.26,98)\n(4278.05,36)\n(4178.5,75)\n(4172.29,99)\n(4042.65,23)\n(3924.23,96)\n(3790.5698,79)\n(3309.3804,45)\n\u001b[1m\u001b[34mtotalPorClienteOrdenadoPorGasto\u001b[0m: \u001b[1m\u001b[32mUnit\u001b[0m \u003d ()\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d54"
+            },
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d55"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1631848851651_1347398469",
+      "id": "paragraph_1631848851651_1347398469",
+      "dateCreated": "2021-09-17 05:20:51.651",
+      "dateStarted": "2021-09-17 05:23:21.053",
+      "dateFinished": "2021-09-17 05:23:21.532",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val totalPorClienteOrdenadoPorGasto \u003d totalPorCliente.map(elemento \u003d\u003e (elemento._2,elemento._1)).sortByKey(false).take(5).foreach(println)",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-17 05:23:45.641",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(6375.45,68)\n(6206.199,73)\n(6193.1104,39)\n(6065.39,54)\n(5995.66,71)\n\u001b[1m\u001b[34mtotalPorClienteOrdenadoPorGasto\u001b[0m: \u001b[1m\u001b[32mUnit\u001b[0m \u003d ()\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d56"
+            },
+            {
+              "jobUrl": "http://192.168.0.11:4040/jobs/job?id\u003d57"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1631848964536_1477337120",
+      "id": "paragraph_1631848964536_1477337120",
+      "dateCreated": "2021-09-17 05:22:44.536",
+      "dateStarted": "2021-09-17 05:23:45.651",
+      "dateFinished": "2021-09-17 05:23:46.042",
+      "status": "FINISHED"
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1631849025649_450293761",
+      "id": "paragraph_1631849025649_450293761",
+      "dateCreated": "2021-09-17 05:23:45.649",
+      "status": "READY"
+    }
+  ],
+  "name": "8.Ingresos Clientes",
+  "id": "2GG76MUV7",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

@@ -1,0 +1,646 @@
+{
+  "paragraphs": [
+    {
+      "text": "// funciones  \n\ndef obtenerCubo(x:Int): Int \u003d {\n    return x * x * x\n}\n\nval resultadoCubo \u003d obtenerCubo(3)\nprintln(s\"Resultado:${resultadoCubo}\")",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-16 18:55:04.494",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Resultado:27\n\u001b[1m\u001b[34mobtenerCubo\u001b[0m: \u001b[1m\u001b[32m(x: Int)Int\u001b[0m\n\u001b[1m\u001b[34mresultadoCubo\u001b[0m: \u001b[1m\u001b[32mInt\u001b[0m \u003d 27\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625373720532_340687774",
+      "id": "paragraph_1625373720532_340687774",
+      "dateCreated": "2021-07-04 06:42:00.532",
+      "dateStarted": "2021-09-16 18:55:04.548",
+      "dateFinished": "2021-09-16 18:55:26.600",
+      "status": "FINISHED"
+    },
+    {
+      "text": "// simplificacion de funciones\n\ndef obtenerCubo2(x:Int) \u003d x * x * x\nval resultadoCubo2 \u003d obtenerCubo2(3)\nprintln(s\"Resultado:${resultadoCubo2}\")\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-16 18:56:44.624",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Resultado:27\n\u001b[1m\u001b[34mobtenerCubo2\u001b[0m: \u001b[1m\u001b[32m(x: Int)Int\u001b[0m\n\u001b[1m\u001b[34mresultadoCubo2\u001b[0m: \u001b[1m\u001b[32mInt\u001b[0m \u003d 27\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625373777009_1344644846",
+      "id": "paragraph_1625373777009_1344644846",
+      "dateCreated": "2021-07-04 06:42:57.009",
+      "dateStarted": "2021-09-16 18:56:44.631",
+      "dateFinished": "2021-09-16 18:56:44.924",
+      "status": "FINISHED"
+    },
+    {
+      "text": "// funciones anónimas o lambda\n\ndef sumar(f:Int \u003d\u003e Int):Int \u003d {\n    return f(6) + 5\n}\n\nval suma \u003d sumar(obtenerCubo2)\nprintln(suma)",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-16 19:04:03.833",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "221\n\u001b[1m\u001b[34msumar\u001b[0m: \u001b[1m\u001b[32m(f: Int \u003d\u003e Int)Int\u001b[0m\n\u001b[1m\u001b[34msuma\u001b[0m: \u001b[1m\u001b[32mInt\u001b[0m \u003d 221\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625374091282_1990336160",
+      "id": "paragraph_1625374091282_1990336160",
+      "dateCreated": "2021-07-04 06:48:11.282",
+      "dateStarted": "2021-09-16 19:04:03.837",
+      "dateFinished": "2021-09-16 19:04:04.036",
+      "status": "FINISHED"
+    },
+    {
+      "text": "def divide(x:Int) \u003d x / 2\n\nval suma2 \u003d sumar(divide)\nprintln(suma2)",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-16 19:04:06.624",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "8\n\u001b[1m\u001b[34mdivide\u001b[0m: \u001b[1m\u001b[32m(x: Int)Int\u001b[0m\n\u001b[1m\u001b[34msuma2\u001b[0m: \u001b[1m\u001b[32mInt\u001b[0m \u003d 8\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625374394453_613870734",
+      "id": "paragraph_1625374394453_613870734",
+      "dateCreated": "2021-07-04 06:53:14.453",
+      "dateStarted": "2021-09-16 19:04:06.645",
+      "dateFinished": "2021-09-16 19:04:06.790",
+      "status": "FINISHED"
+    },
+    {
+      "text": "// colecciones : secuencias\n\nval salarios \u003d Seq(3000,4000,6000,8000)\nval doblarSalario \u003d (x:Int) \u003d\u003e x * 2  //funcion anonima\n\n// transformacion\nval salariosDoblados \u003d salarios.map(doblarSalario)\nsalariosDoblados\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-16 19:04:56.202",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34msalarios\u001b[0m: \u001b[1m\u001b[32mSeq[Int]\u001b[0m \u003d List(3000, 4000, 6000, 8000)\n\u001b[1m\u001b[34mdoblarSalario\u001b[0m: \u001b[1m\u001b[32mInt \u003d\u003e Int\u001b[0m \u003d \u003cfunction1\u003e\n\u001b[1m\u001b[34msalariosDoblados\u001b[0m: \u001b[1m\u001b[32mSeq[Int]\u001b[0m \u003d List(6000, 8000, 12000, 16000)\n\u001b[1m\u001b[34mres12\u001b[0m: \u001b[1m\u001b[32mSeq[Int]\u001b[0m \u003d List(6000, 8000, 12000, 16000)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625374656553_1225713297",
+      "id": "paragraph_1625374656553_1225713297",
+      "dateCreated": "2021-07-04 06:57:36.553",
+      "dateStarted": "2021-09-16 19:04:56.211",
+      "dateFinished": "2021-09-16 19:04:56.602",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val salariosDoblados \u003d salarios.map(x \u003d\u003e x * 2)\nsalariosDoblados",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-16 19:05:59.908",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34msalariosDoblados\u001b[0m: \u001b[1m\u001b[32mSeq[Int]\u001b[0m \u003d List(6000, 8000, 12000, 16000)\n\u001b[1m\u001b[34mres13\u001b[0m: \u001b[1m\u001b[32mSeq[Int]\u001b[0m \u003d List(6000, 8000, 12000, 16000)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625375251195_1775312499",
+      "id": "paragraph_1625375251195_1775312499",
+      "dateCreated": "2021-07-04 07:07:31.195",
+      "dateStarted": "2021-09-16 19:05:59.913",
+      "dateFinished": "2021-09-16 19:06:00.192",
+      "status": "FINISHED"
+    },
+    {
+      "text": "// bucles\n\nfor(i \u003c- 1 until 3){\n    println(i + \"*\")\n}",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-16 19:06:23.754",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "1*\n2*\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625375261808_318571528",
+      "id": "paragraph_1625375261808_318571528",
+      "dateCreated": "2021-07-04 07:07:41.808",
+      "dateStarted": "2021-09-16 19:06:23.760",
+      "dateFinished": "2021-09-16 19:06:24.037",
+      "status": "FINISHED"
+    },
+    {
+      "text": "for(i \u003c- 1 to 3){\n    println(i + \"*\")\n}",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-16 19:08:54.319",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "1*\n2*\n3*\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1631812116824_1372883398",
+      "id": "paragraph_1631812116824_1372883398",
+      "dateCreated": "2021-09-16 19:08:36.824",
+      "dateStarted": "2021-09-16 19:08:54.327",
+      "dateFinished": "2021-09-16 19:08:54.498",
+      "status": "FINISHED"
+    },
+    {
+      "text": "for(i \u003c- 1 until 3; j \u003c- \"abc\"){\n    println(s\"${i} ${j} \")\n}",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-16 19:09:51.155",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "1 a \n1 b \n1 c \n2 a \n2 b \n2 c \n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625375266163_1041411514",
+      "id": "paragraph_1625375266163_1041411514",
+      "dateCreated": "2021-07-04 07:07:46.163",
+      "dateStarted": "2021-09-16 19:09:51.164",
+      "dateFinished": "2021-09-16 19:09:51.431",
+      "status": "FINISHED"
+    },
+    {
+      "text": "(1 until 3).foreach {\n    i \u003d\u003e \"abc\".foreach {\n        j \u003d\u003e println(s\"${i} ${j} \")\n    }\n}",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-16 19:09:53.853",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "1 a \n1 b \n1 c \n2 a \n2 b \n2 c \n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625375270391_325446696",
+      "id": "paragraph_1625375270391_325446696",
+      "dateCreated": "2021-07-04 07:07:50.392",
+      "dateStarted": "2021-09-16 19:09:53.858",
+      "dateFinished": "2021-09-16 19:09:54.088",
+      "status": "FINISHED"
+    },
+    {
+      "text": "(1 until 3).foreach {\n    i \u003d\u003e println(s\"${i} \")\n}",
+      "user": "anonymous",
+      "dateUpdated": "2021-07-04 07:19:00.499",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "1 \n2 \n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625375273059_237045305",
+      "id": "paragraph_1625375273059_237045305",
+      "dateCreated": "2021-07-04 07:07:53.059",
+      "dateStarted": "2021-07-04 07:19:00.503",
+      "dateFinished": "2021-07-04 07:19:00.680",
+      "status": "FINISHED"
+    },
+    {
+      "text": "//Bloques\n\nprintln({\n    val x \u003d 1 + 1\n    x + 1 //en un bloque, la ultima expresion es la que vale\n})",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-16 19:13:59.077",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "3\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625375274474_2054157443",
+      "id": "paragraph_1625375274474_2054157443",
+      "dateCreated": "2021-07-04 07:07:54.474",
+      "dateStarted": "2021-09-16 19:13:59.083",
+      "dateFinished": "2021-09-16 19:13:59.226",
+      "status": "FINISHED"
+    },
+    {
+      "text": "// Paradigma POO\n\ncase class Punto(x: Int, y: Int)  // las case class solo contienen informacion\n\nval punto \u003d Punto(1,2)\nval punto2 \u003d Punto(3,7)\n\ncase class Usuario(nombre:String, edad: Int)\n\nval juan \u003d Usuario(\"Juan\",45)\nval maria \u003d Usuario(\"Maria\",34)\nval pedro \u003d Usuario(\"Pedro\",67)\n\n//coleccion Lista (List)\n\nval usuarios \u003d List(juan,maria,pedro)\n\nval primerUsuario \u003d usuarios(0)\nprintln(s\"Me llamo ${primerUsuario.nombre}\")",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-16 19:18:03.278",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Me llamo Juan\ndefined class Punto\n\u001b[1m\u001b[34mpunto\u001b[0m: \u001b[1m\u001b[32mPunto\u001b[0m \u003d Punto(1,2)\n\u001b[1m\u001b[34mpunto2\u001b[0m: \u001b[1m\u001b[32mPunto\u001b[0m \u003d Punto(3,7)\ndefined class Usuario\n\u001b[1m\u001b[34mjuan\u001b[0m: \u001b[1m\u001b[32mUsuario\u001b[0m \u003d Usuario(Juan,45)\n\u001b[1m\u001b[34mmaria\u001b[0m: \u001b[1m\u001b[32mUsuario\u001b[0m \u003d Usuario(Maria,34)\n\u001b[1m\u001b[34mpedro\u001b[0m: \u001b[1m\u001b[32mUsuario\u001b[0m \u003d Usuario(Pedro,67)\n\u001b[1m\u001b[34musuarios\u001b[0m: \u001b[1m\u001b[32mList[Usuario]\u001b[0m \u003d List(Usuario(Juan,45), Usuario(Maria,34), Usuario(Pedro,67))\n\u001b[1m\u001b[34mprimerUsuario\u001b[0m: \u001b[1m\u001b[32mUsuario\u001b[0m \u003d Usuario(Juan,45)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625375275903_355318787",
+      "id": "paragraph_1625375275903_355318787",
+      "dateCreated": "2021-07-04 07:07:55.903",
+      "dateStarted": "2021-09-16 19:18:03.286",
+      "dateFinished": "2021-09-16 19:18:04.128",
+      "status": "FINISHED"
+    },
+    {
+      "text": "// recorrido\n\nfor (usuario \u003c- usuarios){\n    println(s\"Nombre Usuario ${usuario.nombre} de edad ${usuario.edad}\")\n}",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-16 19:19:07.882",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Nombre Usuario Juan de edad 45\nNombre Usuario Maria de edad 34\nNombre Usuario Pedro de edad 67\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625376069761_1182574658",
+      "id": "paragraph_1625376069761_1182574658",
+      "dateCreated": "2021-07-04 07:21:09.761",
+      "dateStarted": "2021-09-16 19:19:07.889",
+      "dateFinished": "2021-09-16 19:19:08.064",
+      "status": "FINISHED"
+    },
+    {
+      "text": "//Mapas o maps / Diccionarios\n\nval miColeccion \u003d Map(\"a\" -\u003e 34, \"b\" -\u003e 12)\n\n//acceso es a través de la clave\nval datoA \u003d miColeccion.get(\"a\")\nprintln(datoA)",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-16 19:20:50.401",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Some(34)\n\u001b[1m\u001b[34mmiColeccion\u001b[0m: \u001b[1m\u001b[32mscala.collection.immutable.Map[String,Int]\u001b[0m \u003d Map(a -\u003e 34, b -\u003e 12)\n\u001b[1m\u001b[34mdatoA\u001b[0m: \u001b[1m\u001b[32mOption[Int]\u001b[0m \u003d Some(34)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625376073815_1270420241",
+      "id": "paragraph_1625376073815_1270420241",
+      "dateCreated": "2021-07-04 07:21:13.816",
+      "dateStarted": "2021-09-16 19:19:20.716",
+      "dateFinished": "2021-09-16 19:19:20.955",
+      "status": "FINISHED"
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1625376084069_972871905",
+      "id": "paragraph_1625376084069_972871905",
+      "dateCreated": "2021-07-04 07:21:24.069",
+      "status": "READY"
+    }
+  ],
+  "name": "2.Scala Intro 2",
+  "id": "2G96NXT3X",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

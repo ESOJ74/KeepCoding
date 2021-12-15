@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <title>SVG</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+        rect {
+            fill: aqua;
+        }
+        
+        circle {
+            fill: red;
+        }
+        
+        circle.change-circle {
+            opacity: 0.5;
+        }
+        
+        .especiales {
+            stroke: rebeccapurple;
+            stroke-width: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <svg width="800" height="500">
+        <!--Creacion de elementos basicos-->
+        <rect x=20 y=50 width="100" height="50"></rect>
+        <circle cx=75 cy=20 r=15></circle>
+
+        <!--Creacion de elementos path-->
+        <path d="M 100 100 L 200 100 L 150 200 z" />
+
+        <!--Elemento g agrupador de elementos-->
+        <g transform="translate(400,250)">
+            <path transform="translate(45,-50)" class=" especiales" d="M 30 30
+            A 45 45, 0, 1, 1, 75 75
+            L 75 30 Z" fill="#b9dbb6" />
+            <ellipse id="target" rx="50" ry="25" />
+            <circle r=5></circle>
+            <circle cx=50 r=10 class="especiales"></circle>
+            <circle id="target" cx=75 r=15></circle>
+            <circle cx=100 r=20 class="especiales"></circle>
+            <text x=50 y=50 font-family="Trebuchet MS">Prueba Logo</text>
+        </g>
+    </svg>
+
+    <script>
+        //Cambio atributo a traves de un selector de elemento
+
+        /* d3.select("circle")
+              .attr("fill", "green")
+              
+         d3.selectAll("circle")
+             .attr("fill", "green")
+        
+        // Selector Id 
+         d3.select("#target")
+            .attr("fill", "green")
+
+        // Cambio a traves de una clase
+            d3.select(".change-circle")
+                .style("fill", "green")
+                .style("opacity", 1)*/
+
+        d3.select("circle")
+            .style("fill", "green") //Para cambiar elementos que tengan estilos definidos usar style
+            .style("opacity", 1)
+
+        //append
+        d3.select("svg")
+            //.select("g")
+            .append("circle")
+            .attr("id", "circulo-d3")
+            .attr("cx", 170) //recordar la transformacion aplicada a g
+            .attr("cy", 25)
+            .attr("r", 25)
+            .style("fill", "#8803fc");
+
+        //append
+        d3.select("g")
+            .append("circle")
+            .attr("id", "circulo-d3")
+            .attr("cx", 170) //recordar la transformacion aplicada a g
+            .attr("cy", 25)
+            .attr("r", 25)
+            .style("fill", "#8803fc");
+
+
+        //append concatenado
+        d3.select("svg")
+            .append("g") //Crea un elemento y devuelve una seleccion
+            .append("circle")
+            .attr("cx", 25)
+            .attr("cy", 25)
+            .attr("r", 25)
+
+        //select all g
+        /* d3.selectAll("g")
+             .append("rect")
+             .attr("width", 25)
+             .attr("height", 50)*/
+
+        //Para imprimir por pantalla el valor asociado a atributos.
+        console.log(d3.select("circle").attr("height"))
+    </script>
+</body>
