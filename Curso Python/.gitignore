@@ -1,0 +1,8 @@
+.idea
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+.coverage
+*.pyc
+.ipynb_checkpoints/*
+proyecto_ejemplo/*
